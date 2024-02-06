@@ -1,3 +1,6 @@
+## Requirements
+ - Node 18
+ - Docker
 ## Build
 Build the Docker containers.
 
@@ -25,6 +28,11 @@ $ docker-compose down
 Access the API documentation at:
 [http://localhost:3000/swagger](http://localhost:3000/swagger)
 
+## Mongo Express
+Access the Mongo Express at:
+[http://localhost:8081](http://localhost:8081)
+user: admin
+pwd: pass
 
 ## Database Seeding
 
