@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root2024
+      MONGO_INITDB_DATABASE: couchsurfing-db 
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root2024
+      ME_CONFIG_MONGODB_URL: mongodb://root:root2024@mongodb:27017/
+
+  couchsurfing-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: couchsurfing-api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://root:root2024@mongodb:27017/couchsurfing-db
