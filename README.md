@@ -97,4 +97,4 @@ Sample Response:
 
 ## Quick Demo
 
-![](https://github.com/alpdogan/cs-api/swagger.gif)
+![](https://github.com/alpdogan/cs-api/blob/main/swagger.gif?raw=true)
