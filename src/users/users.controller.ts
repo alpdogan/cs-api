@@ -11,6 +11,27 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  //CRUD
+  @Get(':id')
+  findById(@Param('id') id: string) {
+    return this.usersService.findById(id);
+  }
+
+  @Post()
+  create(@Body() user: User) {
+    return this.usersService.create(user);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() user: User) {
+    return this.usersService.update(id, user);
+  }
+
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.usersService.delete(id);
+  }
+
   @Get('relationship/:user1Id/:user2Id')
   async getDistance(@Param('user1Id') user1Id: string, @Param('user2Id') user2Id: string) {
     var distance = await this.usersService.getDistance(user1Id, user2Id);
