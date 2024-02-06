@@ -1,10 +1,12 @@
 ## Build
+Build the Docker containers.
 
 ```bash
 $ docker-compose build
 ```
 
 ## Running the app
+Run the Docker containers.
 
 ```bash
 $ docker-compose up
@@ -12,26 +14,23 @@ $ docker-compose up
 
 
 ## Remove containers
+Remove the Docker containers.
 
 ```bash
 $ docker-compose down
 ```
-
-
-## Remove containers
-
-```bash
-$ docker-compose down
-```
-
 
 
 ## API Documentation
-
-http://localhost:3000/swagger
+Access the API documentation at:
+[http://localhost:3000/swagger](http://localhost:3000/swagger)
 
 
 ## Database Seeding
+
+Seed the database with dummy data.
+
+
 ```bash
 $ curl -X 'POST' \
   'http://localhost:3000/seeds' \
@@ -41,6 +40,7 @@ $ curl -X 'POST' \
 
 
 ## Get Users
+Retrieve the list of users.
 ```bash
 $ curl -X 'GET' \
   'http://localhost:3000/users' \
@@ -48,6 +48,7 @@ $ curl -X 'GET' \
 ```
 
 ## Get Distance
+Find the relationship distance between two users.
 ```bash
 $ curl -X 'GET' \
   'http://localhost:3000/users/relationship/65c294e205e3809016ba9efc/65c294e205e3809016ba9f07' \
