@@ -3,7 +3,6 @@ import { Module, OnModuleInit } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { SeedsModule } from './seeds/seeds.module';
-import { SeedsService } from './seeds/seeds.service';
 
 @Module({
   imports: [
@@ -13,9 +12,7 @@ import { SeedsService } from './seeds/seeds.service';
   ],
 })
 export class AppModule implements OnModuleInit {
-  // constructor(private readonly seedsService: SeedsService) {}
 
   async onModuleInit() {
-    // await this.seedsService.seed();
   }
 }

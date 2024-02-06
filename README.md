@@ -95,3 +95,6 @@ Sample Response:
 ```
 
 
+## Quick Demo
+
+![](https://github.com/alpdogan/cs-api/swagger.gif)
